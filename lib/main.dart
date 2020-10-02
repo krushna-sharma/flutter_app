@@ -24,8 +24,8 @@ class RandomWords extends StatefulWidget {
 class _RandomWordsState extends State<RandomWords> {
   final _suggestions = <WordPair>[];
   final _saved = Set<WordPair>();
-  final _biggerFont = TextStyle(fontSize: 18.0);
-  final _smallerFont = TextStyle(fontSize: 15.0, fontWeight: FontWeight.w700);
+  final _smallerFont = TextStyle(fontSize: 18.0);
+  final _biggerFont = TextStyle(fontSize: 24.0, fontWeight: FontWeight.w700,color: Colors.blue);
 
   Widget _buildSuggestions() {
     return ListView.builder(
@@ -46,7 +46,7 @@ class _RandomWordsState extends State<RandomWords> {
     return ListTile(
       title: Text(
         pair.asPascalCase,
-        style: _biggerFont,
+        style: _smallerFont,
       ),
       trailing: Icon(
         alreadySaved ? Icons.favorite : Icons.favorite_border,
@@ -86,7 +86,7 @@ class _RandomWordsState extends State<RandomWords> {
             return ListTile(
               title: Text(
                 pair.asPascalCase,
-                style: _smallerFont,
+                style: _biggerFont,
               ),
             );
           },
